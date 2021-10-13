@@ -11,7 +11,7 @@ var udpPort = new osc.UDPPort({
 const sendMessage = (state = 0) => {
   udpPort.send(
     {
-      address: "/servermessage",
+      address: `/client-${process.env.CLIENT_ID}`,
       args: {
         type: "i",
         value: state,
