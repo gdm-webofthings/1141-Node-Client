@@ -55,7 +55,7 @@ udpPort.on("message", function ({ args } = oscMsg, info) {
 
 // after startup send ready
 udpPort.on("ready", function () {
-  sendMessage(0);
+  sendMessage(999);
 });
 
 // Open the socket.
