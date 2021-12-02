@@ -11,7 +11,7 @@ var udpPort = new osc.UDPPort({
 const sendMessage = (state = 0) => {
   udpPort.send(
     {
-      address: `/client-${process.env.CLIENT_ID}`,
+      address: `/Client-${process.env.CLIENT_ID}`,
       args: {
         type: "i",
         value: state,
@@ -55,7 +55,7 @@ udpPort.on("message", function ({ args } = oscMsg, info) {
 
 // after startup send ready
 udpPort.on("ready", function () {
-  sendMessage(999);
+  sendMessage(0);
 });
 
 // Open the socket.
